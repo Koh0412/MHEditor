@@ -9,7 +9,7 @@ class Application {
 
   constructor() {
     this.mainUrl = url.format({
-      pathname: path.join(__dirname, '/dist/index.html'),
+      pathname: path.join(__dirname, '/index.html'),
       protocol: 'file:',
       slashes: true,
     });
@@ -28,8 +28,8 @@ class Application {
 
   createWindow(): BrowserWindow {
     this.mainWindow = new BrowserWindow({
-      width: 600,
-      height: 450,
+      width: 800,
+      height: 600,
       webPreferences: { nodeIntegration: true },
     });
 

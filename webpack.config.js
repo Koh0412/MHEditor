@@ -34,12 +34,12 @@ const renderer = {
     path: path.resolve(__dirname, 'dist', 'scripts'),
   },
   resolve: {
-    extensions: ['ts', 'js', 'tsx'],
+    extensions: ['.ts', '.js', '.tsx', '.json'],
   },
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         loader: 'ts-loader',
       },
     ],
