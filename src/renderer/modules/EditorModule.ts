@@ -7,6 +7,7 @@ class EditorModule {
       monaco.editor.create(container, {
         value: '',
         language: 'javascript',
+        theme: 'vs-dark'
       });
     }
   }

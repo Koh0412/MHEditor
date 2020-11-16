@@ -24,16 +24,22 @@ class Application {
     });
   }
 
+  private get windowOption() {
+    const options: Electron.BrowserWindowConstructorOptions = {
+      width: 800,
+      height: 600,
+      titleBarStyle: "hidden",
+      webPreferences: { nodeIntegration: true },
+    }
+    return options;
+  }
+
   static start(): Application {
     return new Application();
   }
 
   createWindow(): BrowserWindow {
-    this.mainWindow = new BrowserWindow({
-      width: 800,
-      height: 600,
-      webPreferences: { nodeIntegration: true },
-    });
+    this.mainWindow = new BrowserWindow(this.windowOption);
 
     this.mainWindow.loadURL(this.mainUrl);
     this.mainWindow.on('closed', () => {
@@ -42,6 +48,7 @@ class Application {
 
     return this.mainWindow;
   }
+
 }
 
 Application.start();
