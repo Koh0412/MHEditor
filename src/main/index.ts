@@ -8,6 +8,8 @@ class Application {
   private mainWindow: BrowserWindow | null;
 
   constructor() {
+    process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = "true";
+
     this.mainUrl = url.format({
       pathname: path.join(__dirname, '/index.html'),
       protocol: 'file:',

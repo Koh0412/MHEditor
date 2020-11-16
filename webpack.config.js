@@ -1,5 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 // メインプロセスの設定
 const main = {
@@ -42,8 +42,17 @@ const renderer = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        loader: 'file-loader',
+      },
     ],
   },
+  plugins: [new MonacoWebpackPlugin()],
 };
 
 module.exports = [main, renderer];
