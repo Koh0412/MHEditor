@@ -17,7 +17,8 @@ class EditorModule {
     const options: monaco.editor.IStandaloneEditorConstructionOptions = {
       value: '',
       language: this.lang,
-      theme: 'vs-dark'
+      theme: 'vs-dark',
+      automaticLayout: true
     }
     return options;
   }

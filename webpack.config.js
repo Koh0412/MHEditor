@@ -1,28 +1,6 @@
 const path = require('path');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
-// メインプロセスの設定
-const main = {
-  mode: 'development',
-  target: 'electron-main',
-  entry: path.join(__dirname, 'src/main/index.ts'),
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  resolve: {
-    extensions: ['ts', 'js'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        loader: 'ts-loader',
-      },
-    ],
-  },
-};
-
 // レンダラープロセスの設定
 const renderer = {
   mode: 'development',
@@ -55,4 +33,4 @@ const renderer = {
   plugins: [new MonacoWebpackPlugin()],
 };
 
-module.exports = [main, renderer];
+module.exports = [renderer];

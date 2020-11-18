@@ -2,6 +2,7 @@ import * as url from 'url';
 import * as path from 'path';
 
 import { app, BrowserWindow } from 'electron';
+import { DEFAULT_WINDOW_OPTIONS } from './const';
 
 class Application {
   private mainUrl: string;
@@ -11,7 +12,7 @@ class Application {
     process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = "true";
 
     this.mainUrl = url.format({
-      pathname: path.join(__dirname, '/index.html'),
+      pathname: path.join(__dirname, '../index.html'),
       protocol: 'file:',
       slashes: true,
     });
@@ -26,8 +27,7 @@ class Application {
 
   private get windowOption() {
     const options: Electron.BrowserWindowConstructorOptions = {
-      width: 800,
-      height: 600,
+      ...DEFAULT_WINDOW_OPTIONS,
       titleBarStyle: "hidden",
       webPreferences: { nodeIntegration: true },
     }

@@ -32,7 +32,7 @@ class Editor extends React.Component {
 
   render(): JSX.Element {
     const styles: React.CSSProperties | undefined = {
-      width: '100%',
+      width: 'auto',
       height: '500px',
       border: '1px solid grey',
     };

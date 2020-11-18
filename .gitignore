@@ -2,4 +2,5 @@
 
 # dist
 /dist/**/*.js
+/dist/**/*.map
 /dist/scripts/*
