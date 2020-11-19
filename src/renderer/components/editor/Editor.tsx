@@ -1,7 +1,7 @@
 import React from 'react';
-import { editorLanguages } from '../constants/editorConst';
-import { editorModule } from '../modules/EditorModule';
-import { LangType } from '../types';
+import { editorLanguages } from '../../constants/editorConst';
+import { editorModule } from '../../modules/EditorModule';
+import { LangType } from '../../types';
 
 addEventListener('DOMContentLoaded', () => editorModule.boot(), false);
 
@@ -31,19 +31,13 @@ class Editor extends React.Component {
   }
 
   render(): JSX.Element {
-    const styles: React.CSSProperties | undefined = {
-      width: 'auto',
-      height: '500px',
-      border: '1px solid grey',
-    };
-
     return (
-      <>
-        <div id="editable" style={styles}></div>
+      <div className="editor">
+        <div id="editable" className="context"></div>
         <select onChange={(e) => this.changeLang(e)}>
           {this.langValueElements()}
         </select>
-      </>
+      </div>
     );
   }
 }
