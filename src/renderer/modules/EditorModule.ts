@@ -26,7 +26,7 @@ class EditorModule {
   /**
    * 起動処理
    */
-  boot(): void {
+  boot() {
     const container = document.getElementById('editable');
     if (!container) {
       return;

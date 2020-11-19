@@ -7,7 +7,7 @@ class Titlebar {
     this.instance = this.create();
   }
 
-  private get options(): custombar.TitlebarOptions {
+  private get options() {
     const options: custombar.TitlebarOptions = {
       backgroundColor: custombar.Color.fromHex('#333')
     };

@@ -20,7 +20,7 @@ class Editor extends React.Component {
   /**
    * 言語選択のoption要素を生成
    */
-  langValueElements() {
+  langValueElements(): JSX.Element[] {
     const languages = Object.values(editorLanguages) as LangType[];
 
     return languages.map((lang, i) => {
