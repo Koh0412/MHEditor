@@ -12,7 +12,7 @@ main .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: calc(100% - 24px);
+  height: calc(100% - 1.5rem);
 }
 
 main .container .editor {
@@ -41,5 +41,10 @@ main .tools {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-size: 0.9rem;
+  height: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: system-ui;
 }
 /*# sourceMappingURL=editor.css.map */

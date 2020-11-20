@@ -34,7 +34,6 @@ class Setting extends React.Component {
         <select onChange={(e) => this.changeLang(e)}>
           {this.langValueElements()}
         </select>
-        <div>lang</div>
       </div>
     );
   }

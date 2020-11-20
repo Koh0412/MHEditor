@@ -1,4 +1,4 @@
-$toolbar-height: 24px;
+$toolbar-height: 1.5rem;
 $toolbar-font-size: 0.9rem;
 
 $file-tree-width: 210px;
@@ -40,5 +40,8 @@ main {
     padding: 0 .5rem;
     justify-content: space-between;
     font-size: $toolbar-font-size;
+    height: 1.5rem;
+    align-items: center;
+    font-family: system-ui;
   }
 }
