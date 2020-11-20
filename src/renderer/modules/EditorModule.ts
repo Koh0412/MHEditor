@@ -4,7 +4,7 @@ import { LangType } from '../types';
 
 class EditorModule {
   lang: LangType;
-  editorInstance: monaco.editor.IStandaloneCodeEditor | undefined;
+  instance: monaco.editor.IStandaloneCodeEditor | undefined;
 
   constructor() {
     this.lang = DEFAULT_LANGUAGE;
@@ -24,6 +24,17 @@ class EditorModule {
   }
 
   /**
+   * monacoエディタのモデル取得
+   */
+  get model() {
+    if (!this.instance) {
+      return;
+    }
+    const model = this.instance.getModel();
+    return model;
+  }
+
+  /**
    * 起動処理
    */
   boot() {
@@ -31,7 +42,7 @@ class EditorModule {
     if (!container) {
       return;
     }
-    this.editorInstance = monaco.editor.create(container, this.createOption);
+    this.instance = monaco.editor.create(container, this.createOption);
   }
 
   /**
@@ -40,11 +51,15 @@ class EditorModule {
    * @param language
    */
   setLanguage(language: LangType) {
-    if (!this.editorInstance) {
-      return;
-    }
-    const model = this.editorInstance.getModel()!;
-    monaco.editor.setModelLanguage(model, language);
+    monaco.editor.setModelLanguage(this.model, language);
+  }
+
+  /**
+   * モデルが変更された時に発火
+   * @param listener
+   */
+  onChangeContent(listener: (e: monaco.editor.IModelContentChangedEvent) => void) {
+    this.model.onDidChangeContent(listener);
   }
 }
 

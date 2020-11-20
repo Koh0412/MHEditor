@@ -2,9 +2,43 @@ body {
   margin: 0;
 }
 
-.editor .context {
+main {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 24px);
+}
+
+main .container .editor {
+  width: 100%;
+}
+
+main .container .editor .context {
   width: auto;
-  height: 500px;
-  border: 1px solid grey;
+  height: 100%;
+}
+
+main .container .file-tree {
+  padding: 0.5rem;
+  min-width: 210px;
+  color: #a4a8ac;
+}
+
+main .tools {
+  color: #a4a8ac;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #313e54;
+  padding: 0 .5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=editor.css.map */

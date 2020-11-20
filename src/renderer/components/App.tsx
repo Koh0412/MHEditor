@@ -11,11 +11,11 @@ class App extends React.Component {
   render(): JSX.Element {
     return (
       <main>
-        <Tool />
-        <div>
+        <div className="container">
           <FileTree />
           <Editor />
         </div>
+        <Tool />
       </main>
     );
   }
