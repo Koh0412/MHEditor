@@ -35,14 +35,14 @@ class EditorModule {
   }
 
   /**
-   * 起動処理
+   * moduleの使用を宣言
    */
-  boot() {
+  use(): EditorModule {
     const container = document.getElementById('editable');
-    if (!container) {
-      return;
+    if (container && !this.instance) {
+      this.instance = monaco.editor.create(container, this.createOption);
     }
-    this.instance = monaco.editor.create(container, this.createOption);
+    return this;
   }
 
   /**
@@ -58,8 +58,8 @@ class EditorModule {
    * モデルが変更された時に発火
    * @param listener
    */
-  onChangeContent(listener: (e: monaco.editor.IModelContentChangedEvent) => void) {
-    this.model.onDidChangeContent(listener);
+  onChangeCursorPosition(listener: (e: monaco.editor.ICursorPositionChangedEvent) => void) {
+    this.instance.onDidChangeCursorPosition(listener);
   }
 }
 

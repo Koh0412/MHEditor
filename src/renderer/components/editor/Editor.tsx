@@ -1,9 +1,10 @@
 import React from 'react';
-import { editorModule } from '../../modules/EditorModule';
-
-addEventListener('DOMContentLoaded', () => editorModule.boot(), false);
 
 class Editor extends React.Component {
+  constructor(props: {}) {
+    super(props);
+  }
+
   render(): JSX.Element {
     return (
       <div className="editor">

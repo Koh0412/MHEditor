@@ -1,3 +1,8 @@
+$toolbar-height: 24px;
+$toolbar-font-size: 0.9rem;
+
+$file-tree-width: 210px;
+
 body {
   margin: 0;
 }
@@ -9,7 +14,7 @@ main {
 
   .container {
     display: flex;
-    height: calc(100% - 24px);
+    height: calc(100% - #{$toolbar-height});
 
     .editor {
       width: 100%;
@@ -22,7 +27,7 @@ main {
 
     .file-tree {
       padding: 0.5rem;
-      min-width: 210px;
+      min-width: $file-tree-width;
       color: #a4a8ac;
     }
 
@@ -34,5 +39,6 @@ main {
     background: #313e54;
     padding: 0 .5rem;
     justify-content: space-between;
+    font-size: $toolbar-font-size;
   }
 }

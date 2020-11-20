@@ -40,5 +40,6 @@ main .tools {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-size: 0.9rem;
 }
 /*# sourceMappingURL=editor.css.map */
