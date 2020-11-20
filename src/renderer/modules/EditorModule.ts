@@ -1,10 +1,10 @@
 import * as monaco from 'monaco-editor';
 import { DEFAULT_LANGUAGE } from '../constants/editorConst';
-import { LangType } from '../types';
+import { IStandaloneCodeEditor, LangType } from '../types';
 
 class EditorModule {
   lang: LangType;
-  instance: monaco.editor.IStandaloneCodeEditor | undefined;
+  instance: IStandaloneCodeEditor | undefined;
 
   constructor() {
     this.lang = DEFAULT_LANGUAGE;
