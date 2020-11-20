@@ -27,11 +27,10 @@ class EditorModule {
    * monacoエディタのモデル取得
    */
   get model() {
-    if (!this.instance) {
-      return;
+    if (this.instance) {
+      const model = this.instance.getModel();
+      return model;
     }
-    const model = this.instance.getModel();
-    return model;
   }
 
   /**
@@ -51,7 +50,9 @@ class EditorModule {
    * @param language
    */
   setLanguage(language: LangType) {
-    monaco.editor.setModelLanguage(this.model, language);
+    if (this.model) {
+      monaco.editor.setModelLanguage(this.model, language);
+    }
   }
 
   /**
@@ -59,7 +60,9 @@ class EditorModule {
    * @param listener
    */
   onChangeCursorPosition(listener: (e: monaco.editor.ICursorPositionChangedEvent) => void) {
-    this.instance.onDidChangeCursorPosition(listener);
+    if (this.instance) {
+      this.instance.onDidChangeCursorPosition(listener);
+    }
   }
 }
 
