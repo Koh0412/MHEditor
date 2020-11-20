@@ -31,11 +31,11 @@ main .container .file-tree {
 }
 
 main .tools {
-  color: #a4a8ac;
+  color: #b3bbc3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #313e54;
+  background: #2c5499;
   padding: 0 .5rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
