@@ -15,6 +15,10 @@ class BaseDialog extends React.Component<DialogProps> {
   private get style(): ReactModal.Styles {
     const style: ReactModal.Styles = {
       content: {
+        backgroundColor: '#25282d',
+        color: '#a4a8ac',
+        width: '35%',
+        height: '40%',
         top: '50%',
         left: '50%',
         right: 'auto',
@@ -22,9 +26,7 @@ class BaseDialog extends React.Component<DialogProps> {
         border: 'none',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        width: '35%',
-        height: '35%',
-        backgroundColor: 'rgb(37, 40, 45)'
+        padding: '0'
       },
       overlay: {
         background: 'rgba(0, 0, 0, 0.2)'

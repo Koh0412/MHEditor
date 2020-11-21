@@ -6,7 +6,7 @@ interface InfoState {
   editor: IEditorInfo;
 }
 
-class Infomation extends React.Component<{}, InfoState> {
+class Information extends React.Component<{}, InfoState> {
   constructor(props: {}) {
     super(props);
 
@@ -17,6 +17,9 @@ class Infomation extends React.Component<{}, InfoState> {
     };
   }
 
+  /**
+   * エディタのカーソルの位置
+   */
   get position() {
     return this.state.editor.position;
   }
@@ -35,4 +38,4 @@ class Infomation extends React.Component<{}, InfoState> {
   }
 }
 
-export default Infomation;
+export default Information;

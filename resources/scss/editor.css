@@ -47,4 +47,48 @@ main .tools {
           align-items: center;
   font-family: system-ui;
 }
+
+main .tools .setting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+main .tools .setting .item {
+  list-style: none;
+  padding: 0 .5rem;
+  cursor: pointer;
+}
+
+main .tools .setting .item:hover {
+  background-color: #3a68b8;
+}
+
+.ReactModalPortal .select-lang-dialog {
+  color: #99bcb0;
+  padding: .5rem 0;
+}
+
+.ReactModalPortal .select-lang-dialog .search {
+  color: #99bcb0;
+  width: calc(100% - 24px);
+  background-color: #2d393f;
+  margin: 0 .5rem 1rem;
+  border: none;
+  padding: .25rem;
+}
+
+.ReactModalPortal .select-lang-dialog .search:focus {
+  outline: none;
+}
+
+.ReactModalPortal .select-lang-dialog .lang-item {
+  cursor: pointer;
+  padding: 0 .5rem;
+}
+
+.ReactModalPortal .select-lang-dialog .lang-item:hover {
+  background-color: #3b424e;
+}
 /*# sourceMappingURL=editor.css.map */

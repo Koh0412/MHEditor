@@ -1,40 +1,25 @@
 import React from 'react';
-import { editorLanguages } from '../../constants/editorConst';
-import { editorModule } from '../../modules/EditorModule';
-import { LangType } from '../../types';
+import SelectLang from './actions/SelectLang';
 
-class Setting extends React.Component {
+interface SettingState {
+  actionItems: JSX.Element[];
+}
 
-  /**
-   * 現在の言語を変更
-   *
-   * @param e
-   */
-  changeLang(e: React.SyntheticEvent<HTMLSelectElement, Event>) {
-    const target = e.target as HTMLSelectElement;
-    editorModule.setLanguage(target.value as LangType);
-  }
+class Setting extends React.Component<{}, SettingState> {
+  components: typeof React.Component[];
 
-  /**
-  * 言語選択のoption要素を生成
-  */
-  langValueElements(): JSX.Element[] {
-    const languages = Object.values(editorLanguages) as LangType[];
+  constructor(props: {}) {
+    super(props);
+    this.components = [SelectLang];
 
-    return languages.map((lang, i) => {
-      return (
-        <option value={lang} key={i}>{lang}</option>
-      )
-    });
+    this.state = {
+      actionItems: this.components.map((Component) => <Component />)
+    };
   }
 
   render(): JSX.Element {
     return (
-      <div>
-        <select onChange={(e) => this.changeLang(e)}>
-          {this.langValueElements()}
-        </select>
-      </div>
+      <div className="setting">{this.state.actionItems}</div>
     );
   }
 }

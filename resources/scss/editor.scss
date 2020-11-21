@@ -43,5 +43,46 @@ main {
     height: 1.5rem;
     align-items: center;
     font-family: system-ui;
+
+    .setting {
+      display: flex;
+      height: 100%;
+
+      .item {
+        list-style: none;
+        padding: 0 .5rem;
+        cursor: pointer;
+        &:hover {
+          background-color: #3a68b8;
+        }
+      }
+    }
+  }
+}
+
+.ReactModalPortal {
+  .select-lang-dialog {
+    color: #99bcb0;
+    padding: .5rem 0;
+
+    .search {
+      color: #99bcb0;
+      width: calc(100% - 24px);
+      background-color: #2d393f;
+      margin: 0 .5rem 1rem;
+      border: none;
+      padding: .25rem;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .lang-item {
+      cursor: pointer;
+      padding: 0 .5rem;
+      &:hover {
+        background-color: #3b424e;
+      }
+    }
   }
 }

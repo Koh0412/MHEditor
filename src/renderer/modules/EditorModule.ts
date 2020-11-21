@@ -6,7 +6,9 @@ class EditorModule {
   lang: LangType;
   instance: IStandaloneCodeEditor | undefined;
 
-  constructor() {
+  private static _moduleInstance: EditorModule | undefined;
+
+  private constructor() {
     this.lang = DEFAULT_LANGUAGE;
   }
 
@@ -21,6 +23,16 @@ class EditorModule {
       automaticLayout: true
     }
     return options;
+  }
+
+  /**
+   * シングルトンなインスタンスを取得
+   */
+  static singleton() {
+    if (!EditorModule._moduleInstance) {
+      EditorModule._moduleInstance = new EditorModule();
+    }
+    return EditorModule._moduleInstance;
   }
 
   /**
@@ -65,4 +77,4 @@ class EditorModule {
   }
 }
 
-export const editorModule = new EditorModule();
+export const editorModule = EditorModule.singleton();
