@@ -34,7 +34,7 @@ class EditorModule {
   }
 
   /**
-   * moduleの使用を宣言
+   * エディタのインスタンスの使用を宣言
    */
   use(): EditorModule {
     const container = document.getElementById('editable');
