@@ -5,11 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "monaco-editor": "^0.21.2",
+    "react-modal": "^3.11.2",
     "typescript": "^4.0.5"
   },
   "devDependencies": {
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
+    "@types/react-modal": "^3.10.6",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.7.0",
     "css-loader": "^5.0.1",
