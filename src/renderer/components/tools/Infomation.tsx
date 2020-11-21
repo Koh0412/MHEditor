@@ -22,7 +22,7 @@ class Infomation extends React.Component<{}, InfoState> {
   }
 
   componentDidMount() {
-    editorModule.use().onChangeCursorPosition((e) => {
+    editorModule.onChangeCursorPosition((e) => {
       const editor: IEditorInfo = { position: e.position };
       this.setState({ editor });
     });

@@ -1,7 +1,8 @@
 import React from 'react';
+import Tool from './tools/Tool';
 import Editor from './editor/Editor';
 import FileTree from './tree/FileTree';
-import Tool from './tools/Tool';
+import ModuleLoader from './parts/ModuleLoader';
 
 class App extends React.Component {
   constructor(props: {}) {
@@ -10,13 +11,16 @@ class App extends React.Component {
 
   render(): JSX.Element {
     return (
-      <main>
-        <div className="container">
-          <FileTree />
-          <Editor />
-        </div>
-        <Tool />
-      </main>
+      <>
+        <ModuleLoader />
+        <main>
+          <div className="container">
+            <FileTree />
+            <Editor />
+          </div>
+          <Tool />
+        </main>
+      </>
     );
   }
 }

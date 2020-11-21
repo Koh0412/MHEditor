@@ -34,14 +34,13 @@ class EditorModule {
   }
 
   /**
-   * エディタのインスタンスの使用を宣言
+   * 起動処理
    */
-  use(): EditorModule {
+  boot() {
     const container = document.getElementById('editable');
-    if (container && !this.instance) {
+    if (container) {
       this.instance = monaco.editor.create(container, this.createOption);
     }
-    return this;
   }
 
   /**
