@@ -1,4 +1,5 @@
 import React from 'react';
+import { IPosition } from 'monaco-editor';
 import { editorModule } from '../../modules/EditorModule';
 import { IEditorInfo } from '../../types';
 
@@ -26,8 +27,8 @@ class Information extends React.Component<{}, InfoState> {
 
   componentDidMount() {
     this.setState({
-      editor:  {
-        position: editorModule.instance.getPosition()
+      editor: {
+        position: editorModule.instance?.getPosition() as IPosition
       }
     });
 
