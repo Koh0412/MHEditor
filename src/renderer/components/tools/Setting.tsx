@@ -13,7 +13,7 @@ class Setting extends React.Component<{}, SettingState> {
     this.components = [SelectLang];
 
     this.state = {
-      actionItems: this.components.map((Component) => <Component />)
+      actionItems: this.components.map((Component, i) => <Component key={i} />)
     };
   }
 

@@ -12,7 +12,7 @@ class Information extends React.Component<{}, InfoState> {
 
     this.state = {
       editor: {
-        position: { column: 1, lineNumber: 1 }
+        position: { column: 0, lineNumber: 0 }
       }
     };
   }
@@ -25,6 +25,12 @@ class Information extends React.Component<{}, InfoState> {
   }
 
   componentDidMount() {
+    this.setState({
+      editor:  {
+        position: editorModule.instance.getPosition()
+      }
+    });
+
     editorModule.onChangeCursorPosition((e) => {
       const editor: IEditorInfo = { position: e.position };
       this.setState({ editor });

@@ -20,8 +20,8 @@ class EditorModule {
       value: '',
       language: this.lang,
       theme: 'vs-dark',
-      automaticLayout: true
-    }
+      automaticLayout: true,
+    };
     return options;
   }
 
@@ -52,6 +52,7 @@ class EditorModule {
     const container = document.getElementById('editable');
     if (container) {
       this.instance = monaco.editor.create(container, this.createOption);
+      console.log(this.model.getOptions());
     }
   }
 

@@ -51,7 +51,7 @@ class SelectLang extends React.Component<{}, SelectLangState> {
     return languages.map((lang, i) => {
       return (
         <div className={'lang-item ' + (lang)} key={i} onClick={(e) => this.select(e)}>{lang}</div>
-      )
+      );
     });
   }
 
